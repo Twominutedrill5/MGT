@@ -1,444 +1,871 @@
 <!doctype html>
-<!--
-  Maple Glen Tavern — single-page site
-  Version 4 (Sep 26): green buttons, back to top, video settles on wide shot
-  DRAFT MODE: the "draft" class on <html> highlights every [bracketed] placeholder
-  (class="ph") so you can find them. Remove class="draft" before launch.
--->
+
 <html lang="en" class="draft">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Maple Glen Tavern | Neighborhood Bar on Limekiln Pike, Maple Glen PA</title>
-  <meta name="description" content="Maple Glen Tavern at 505 Limekiln Pike: cheesesteaks, homemade roast beef, wings, cold drafts, and every Philly game on the TVs. See the menu and hours.">
-  <meta name="theme-color" content="#0E2A20">
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>
+      Maple Glen Tavern | Neighborhood Bar on Limekiln Pike, Maple Glen PA
+    </title>
+    <meta
+      name="description"
+      content="Maple Glen Tavern at 505 Limekiln Pike: cheesesteaks, homemade roast beef, wings, cold drafts, and every Philly game on the TVs. See the menu and hours."
+    />
+    <meta name="theme-color" content="#0E2A20" />
+    <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
 
-  <meta property="og:title" content="Maple Glen Tavern">
-  <meta property="og:description" content="Cheesesteaks, wings, cold drafts, and every Philly game. 505 Limekiln Pike, Maple Glen PA.">
-  <meta property="og:image" content="assets/video/poster.jpg">
-  <meta property="og:type" content="restaurant">
+    <meta property="og:title" content="Maple Glen Tavern" />
+    <meta
+      property="og:description"
+      content="Cheesesteaks, wings, cold drafts, and every Philly game. 505 Limekiln Pike, Maple Glen PA."
+    />
+    <meta property="og:image" content="assets/video/poster.jpg" />
+    <meta property="og:type" content="restaurant" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Young+Serif&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="assets/video/poster.jpg">
-  <link rel="stylesheet" href="css/styles.css">
-  <script>document.documentElement.classList.add("js")</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Young+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" as="image" href="assets/video/poster.jpg" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
 
-  <!-- Local business data for Google. Update hours here if they change. -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BarOrPub",
-    "name": "Maple Glen Tavern",
-    "servesCuisine": ["American", "Cheesesteaks", "Pub food"],
-    "telephone": "+1-215-646-0408",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "505 Limekiln Pike",
-      "addressLocality": "Maple Glen",
-      "addressRegion": "PA",
-      "postalCode": "19002",
-      "addressCountry": "US"
-    },
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "02:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "11:00", "closes": "02:00" }
-    ]
-  }
-  </script>
-</head>
-<body>
-  <!-- Reusable logo mark (inherits text color) -->
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <defs>
-      <path id="lobe" d="M0 0C-6-8-31-21-31-40C-31-54-19-61-10-61C-4-61 0-56 0-51C0-56 4-61 10-61C19-61 31-54 31-40C31-21 6-8 0 0Z"/>
-      <mask id="hollow" maskUnits="userSpaceOnUse" x="-78" y="-76" width="150" height="160">
-        <rect x="-78" y="-76" width="150" height="160" fill="#fff"/>
-        <use href="#lobe" fill="#000" transform="translate(0 4)"/>
-        <use href="#lobe" fill="#000" transform="rotate(-118) translate(0 4)"/>
-        <use href="#lobe" fill="#000" transform="rotate(118) translate(0 4)"/>
-      </mask>
-      <symbol id="mgt-logo" viewBox="-78 -76 150 160">
-        <g fill="none" stroke="currentColor" stroke-width="9" stroke-linejoin="round" stroke-linecap="round" mask="url(#hollow)">
-          <use href="#lobe" transform="translate(0 4)"/>
-          <use href="#lobe" transform="rotate(-118) translate(0 4)"/>
-          <use href="#lobe" transform="rotate(118) translate(0 4)"/>
-          <path d="M-5 8C-15 32-34 53-60 66" stroke-width="7"/>
-        </g>
-        <g fill="currentColor" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="30" text-anchor="middle">
-          <text x="0" y="-24">G</text><text x="-31" y="20">M</text><text x="31" y="24">T</text>
-        </g>
-      </symbol>
-    </defs>
-  </svg>
+    <!-- Local business data for Google. Update hours here if they change. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BarOrPub",
+        "name": "Maple Glen Tavern",
+        "servesCuisine": ["American", "Cheesesteaks", "Pub food"],
+        "telephone": "+1-215-646-0408",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "505 Limekiln Pike",
+          "addressLocality": "Maple Glen",
+          "addressRegion": "PA",
+          "postalCode": "19002",
+          "addressCountry": "US"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
+            "opens": "10:00",
+            "closes": "02:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "11:00",
+            "closes": "02:00"
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Reusable logo mark (inherits text color) -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <path
+          id="lobe"
+          d="M0 0C-6-8-31-21-31-40C-31-54-19-61-10-61C-4-61 0-56 0-51C0-56 4-61 10-61C19-61 31-54 31-40C31-21 6-8 0 0Z"
+        />
+        <mask
+          id="hollow"
+          maskUnits="userSpaceOnUse"
+          x="-78"
+          y="-76"
+          width="150"
+          height="160"
+        >
+          <rect x="-78" y="-76" width="150" height="160" fill="#fff" />
+          <use href="#lobe" fill="#000" transform="translate(0 4)" />
+          <use
+            href="#lobe"
+            fill="#000"
+            transform="rotate(-118) translate(0 4)"
+          />
+          <use
+            href="#lobe"
+            fill="#000"
+            transform="rotate(118) translate(0 4)"
+          />
+        </mask>
+        <symbol id="mgt-logo" viewBox="-78 -76 150 160">
+          <g
+            fill="none"
+            stroke="currentColor"
+            stroke-width="9"
+            stroke-linejoin="round"
+            stroke-linecap="round"
+            mask="url(#hollow)"
+          >
+            <use href="#lobe" transform="translate(0 4)" />
+            <use href="#lobe" transform="rotate(-118) translate(0 4)" />
+            <use href="#lobe" transform="rotate(118) translate(0 4)" />
+            <path d="M-5 8C-15 32-34 53-60 66" stroke-width="7" />
+          </g>
+          <g
+            fill="currentColor"
+            font-family="Georgia, 'Times New Roman', serif"
+            font-weight="700"
+            font-size="30"
+            text-anchor="middle"
+          >
+            <text x="0" y="-24">G</text>
+            <text x="-31" y="20">M</text>
+            <text x="31" y="24">T</text>
+          </g>
+        </symbol>
+      </defs>
+    </svg>
 
-  <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ============ HEADER ============ -->
-  <header class="site-header" data-header>
-    <div class="header-inner">
-      <a class="brand" href="#top" aria-label="Maple Glen Tavern, back to top">
-        <svg class="brand-mark" aria-hidden="true"><use href="#mgt-logo"/></svg>
-        <span class="brand-name">Maple Glen Tavern</span>
-      </a>
+    <!-- ============ HEADER ============ -->
+    <header class="site-header" data-header>
+      <div class="header-inner">
+        <a
+          class="brand"
+          href="#top"
+          aria-label="Maple Glen Tavern, back to top"
+        >
+          <svg class="brand-mark" aria-hidden="true">
+            <use href="#mgt-logo" />
+          </svg>
+          <span class="brand-name">Maple Glen Tavern</span>
+        </a>
 
-      <nav class="nav" aria-label="Main">
-        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>
-          <span class="nav-toggle-bars" aria-hidden="true"></span>
-          <span class="visually-hidden">Open menu</span>
-        </button>
-        <ul class="nav-links" id="nav-links" data-nav-links>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#story">Our Story</a></li>
-          <li><a href="#events">Events</a></li>
-          <li><a href="#visit">Contact</a></li>
-          <li class="nav-call"><a class="btn btn-primary btn-sm" href="tel:+12156460408">Call 215-646-0408</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+        <nav class="nav" aria-label="Main">
+          <button
+            class="nav-toggle"
+            aria-expanded="false"
+            aria-controls="nav-links"
+            data-nav-toggle
+          >
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+            <span class="visually-hidden">Open menu</span>
+          </button>
+          <ul class="nav-links" id="nav-links" data-nav-links>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#visit">Contact</a></li>
+            <li class="nav-call">
+              <a class="btn btn-primary btn-sm" href="tel:+12156460408"
+                >Call 215-646-0408</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-  <main id="main">
-
-    <!-- ============ HERO ============ -->
-    <section class="hero" id="top" aria-labelledby="hero-title">
-      <div class="hero-media" aria-hidden="true">
-        <!-- Drone flyover (forward + reverse), audio removed. Smaller file served on phones.
+    <main id="main">
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-media" aria-hidden="true">
+          <!-- Drone flyover (forward + reverse), audio removed. Smaller file served on phones.
              main.js plays it through, rebounds, then stops on the wide shot. -->
-        <video class="hero-video" autoplay muted playsinline preload="metadata" poster="assets/video/poster.jpg" data-hero-video>
-          <source src="assets/video/flyover-720.webm" type="video/webm" media="(max-width: 900px)">
-          <source src="assets/video/flyover-720.mp4" type="video/mp4" media="(max-width: 900px)">
-          <source src="assets/video/flyover-1080.mp4" type="video/mp4">
-        </video>
-      </div>
-
-      <div class="hero-content">
-        <h1 id="hero-title" class="hero-title" tabindex="-1">The neighborhood bar on Limekiln&nbsp;Pike.</h1>
-        <p class="hero-sub">Cheesesteaks, homemade roast beef, wings, and cold drafts, with every Philly game on the TVs. Pull up a stool.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="#menu">Explore Menu</a>
-          <a class="btn btn-ghost" href="#visit">Check Us Out</a>
+          <video
+            class="hero-video"
+            autoplay
+            muted
+            playsinline
+            preload="metadata"
+            poster="assets/video/poster.jpg"
+            data-hero-video
+          >
+            <source
+              src="assets/video/flyover-720.webm"
+              type="video/webm"
+              media="(max-width: 900px)"
+            />
+            <source
+              src="assets/video/flyover-720.mp4"
+              type="video/mp4"
+              media="(max-width: 900px)"
+            />
+            <source src="assets/video/flyover-1080.mp4" type="video/mp4" />
+          </video>
         </div>
-      </div>
 
-      <a class="hours-badge" href="#visit" data-status aria-live="polite">
-        <span class="status-dot" aria-hidden="true"></span>
-        <span class="status-text">
-          <strong data-status-label>Open daily</strong>
-          <span data-status-detail>Mon–Sat 10 AM–2 AM · Sun 11 AM–2 AM</span>
-        </span>
-      </a>
-
-      <button class="video-toggle" type="button" data-video-toggle aria-pressed="false">
-        <span class="visually-hidden">Pause background video</span>
-        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-pause"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
-        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-play"><path d="M7 5l12 7-12 7z"/></svg>
-      </button>
-    </section>
-
-    <!-- ============ OUR STORY ============ -->
-    <!-- PLACEHOLDER COPY: replace bracketed text with the owner's real story. -->
-    <section class="story section" id="story" aria-labelledby="story-title">
-      <div class="container story-grid">
-        <figure class="photo-brief story-photo reveal">
-          <div class="photo-brief-frame">
-            <p><strong>Photo brief:</strong> The grill behind the bar mid-service. Steak hitting the flat-top, onions going, a bartender pulling a draft in soft focus. Warm tungsten light, shot at bar height.</p>
+        <div class="hero-content">
+          <h1 id="hero-title" class="hero-title" tabindex="-1">
+            The neighborhood bar on Limekiln&nbsp;Pike.
+          </h1>
+          <p class="hero-sub">
+            Cheesesteaks, homemade roast beef, wings, and cold drafts, with
+            every Philly game on the TVs. Pull up a stool.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#menu">Explore Menu</a>
+            <a class="btn btn-ghost" href="#visit">Check Us Out</a>
           </div>
-          <figcaption>Swap in: <code>assets/img/story-grill.jpg</code> (1200×1500, portrait)</figcaption>
-        </figure>
+        </div>
 
-        <div class="story-copy reveal">
-          <h2 id="story-title" class="section-title">Nothing fancy. Just done right.</h2>
-          <p class="lede">Maple Glen Tavern has been the corner spot on Limekiln Pike for <span class="ph">[number]</span> years. Neighbors come in after work, stay for the second half, and know the bartender by name.</p>
-          <p>The kitchen keeps it simple on purpose. The roast beef is cooked in-house and sliced thin. The mac &amp; cheese on our burger is made from scratch. Steaks go on <span class="ph">[local bakery]</span> rolls, and the long hots are the real thing.</p>
-          <p><span class="ph">[Owner/cook name]</span> puts it this way: <span class="ph">“[One-line quote about cooking for the neighborhood.]”</span></p>
+        <a class="hours-badge" href="#visit" data-status aria-live="polite">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-text">
+            <strong data-status-label>Open daily</strong>
+            <span data-status-detail>Mon–Sat 10 AM–2 AM · Sun 11 AM–2 AM</span>
+          </span>
+        </a>
 
-          <ul class="story-facts" role="list">
-            <li><strong>Made in-house</strong><span>Roast beef, mac &amp; cheese, <span class="ph">[other house-made items]</span></span></li>
-            <li><strong>On every TV</strong><span>Eagles, Phillies, Flyers, and Sixers</span></li>
-            <li><strong>Out back</strong><span><span class="ph">[Heated patio — confirm]</span></span></li>
+        <button
+          class="video-toggle"
+          type="button"
+          data-video-toggle
+          aria-pressed="false"
+        >
+          <span class="visually-hidden">Pause background video</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-pause">
+            <rect x="6" y="5" width="4" height="14" rx="1" />
+            <rect x="14" y="5" width="4" height="14" rx="1" />
+          </svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-play">
+            <path d="M7 5l12 7-12 7z" />
+          </svg>
+        </button>
+      </section>
+
+      <!-- ============ OUR STORY ============ -->
+      <!-- PLACEHOLDER COPY: replace bracketed text with the owner's real story. -->
+      <section class="story section" id="story" aria-labelledby="story-title">
+        <div class="container story-grid">
+          <figure class="photo-brief story-photo reveal">
+            <div class="photo-brief-frame">
+              <p>
+                <strong>Photo brief:</strong> The grill behind the bar
+                mid-service. Steak hitting the flat-top, onions going, a
+                bartender pulling a draft in soft focus. Warm tungsten light,
+                shot at bar height.
+              </p>
+            </div>
+            <figcaption>
+              Swap in: <code>assets/img/story-grill.jpg</code> (1200×1500,
+              portrait)
+            </figcaption>
+          </figure>
+
+          <div class="story-copy reveal">
+            <h2 id="story-title" class="section-title">
+              Our local tavern. Just done right.
+            </h2>
+            <p class="lede">
+              Maple Glen Tavern has been the corner spot on Limekiln Pike for
+              <span class="ph">[number]</span> years. Neighbors come in after
+              work, stay for the second half, and know the bartender by name.
+            </p>
+            <p>
+              The kitchen keeps it simple on purpose. The roast beef is cooked
+              in-house and sliced thin. Steaks go on Amoroso rolls, and the long
+              hots are the real thing.
+            </p>
+            <p>
+              Michael puts it this way:
+              <span class="ph"
+                >“[One-line quote about cooking for the neighborhood.]”</span
+              >
+            </p>
+
+            <ul class="story-facts" role="list">
+              <li>
+                <strong>Made in-house</strong
+                ><span
+                  >Roast Beef and Roast Pork
+          
+              </li>
+              <li>
+                <strong>On every TV</strong
+                ><span>Eagles, Phillies, Flyers, and Sixers</span>
+              </li>
+              <li>
+                <strong>Our Taps</strong
+                ><span>List of current taps</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ SIGNATURE DISHES ============ -->
+      <section class="signatures section" aria-labelledby="sig-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <h2 id="sig-title" class="section-title">
+              What the regulars order
+            </h2>
+            <p>Three plates that keep people coming back.</p>
+          </div>
+
+          <div class="sig-grid">
+            <article class="sig sig-feature reveal">
+              <figure class="photo-brief">
+                <div class="photo-brief-frame">
+                  <p>
+                    <strong>Photo brief:</strong> Hot roast beef on a Kaiser
+                    roll, cut in half and stacked to show the thin-sliced beef,
+                    gravy just catching the light. 
+                  </p>
+                </div>
+                <figcaption>
+                  <code>assets/img/roast-beef.jpg</code> (1600×1200)
+                </figcaption>
+              </figure>
+              <div class="sig-body">
+                <h3>Hot Home-Made Roast Beef</h3>
+                <p>
+                  Roast beef cooked in-house, sliced thin, and piled hot on a
+                  Kaiser roll. Add long hots and cheese for the full Philly
+                  treatment.
+                </p>
+              </div>
+            </article>
+
+            <article class="sig reveal">
+              <figure class="photo-brief">
+                <div class="photo-brief-frame">
+                  <p>
+                    <strong>Photo brief:</strong> The Tavern Special in its
+                    paper-lined basket. Fried onions, mushrooms, and hot peppers
+                    spilling from the roll. Tight side angle.
+                  </p>
+                </div>
+                <figcaption>
+                  <code>assets/img/tavern-special.jpg</code> (1200×900)
+                </figcaption>
+              </figure>
+              <div class="sig-body">
+                <h3>Tavern Special</h3>
+                <p>
+                  Our namesake steak with hot peppers, mushrooms, fried onions,
+                  and sauce.
+                </p>
+              </div>
+            </article>
+
+            <article class="sig reveal">
+              <figure class="photo-brief">
+                <div class="photo-brief-frame">
+                  <p>
+                    <strong>Photo brief:</strong> Bacon Mac &amp; Cheese Burger,
+                    straight-on at plate level, mac &amp; cheese oozing over the
+                    patty, crisp bacon visible.
+                  </p>
+                </div>
+                <figcaption>
+                  <code>assets/img/mac-burger.jpg</code> (1200×900)
+                </figcaption>
+              </figure>
+              <div class="sig-body">
+                <h3>Bacon Mac &amp; Cheese Burger</h3>
+                <p>
+                  A burger topped with our homemade mac &amp; cheese and bacon.
+                  Bring an appetite.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ MENU ============ -->
+      <section class="menu section" id="menu" aria-labelledby="menu-title">
+        <div class="container">
+          <div class="menu-head reveal">
+            <h2 id="menu-title" class="section-title">The menu</h2>
+            <p>Ask your bartender about today’s specials.</p>
+          </div>
+
+          <!-- Tabs show on phones; tablet/desktop shows every section at once. -->
+          <div
+            class="menu-tabs"
+            role="tablist"
+            aria-label="Menu sections"
+            data-menu-tabs
+            hidden
+          >
+            <button
+              role="tab"
+              id="tab-sandwiches"
+              aria-controls="panel-sandwiches"
+              aria-selected="true"
+            >
+              Sandwiches
+            </button>
+            <button
+              role="tab"
+              id="tab-fryer"
+              aria-controls="panel-fryer"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Fryer
+            </button>
+            <button
+              role="tab"
+              id="tab-extras"
+              aria-controls="panel-extras"
+              aria-selected="false"
+              tabindex="-1"
+            >
+              Extras
+            </button>
+          </div>
+
+          <div class="menu-board" data-menu data-active="sandwiches">
+            <section
+              class="menu-panel panel-sandwiches"
+              id="panel-sandwiches"
+              role="tabpanel"
+              aria-labelledby="tab-sandwiches"
+            >
+              <h3 class="menu-cat">Sandwiches</h3>
+              <ul class="menu-list" role="list">
+                <li>
+                  <h4>Cheesesteak</h4>
+                  <p>Beef or chicken.</p>
+                </li>
+                <li>
+                  <h4>Tavern Special</h4>
+                  <p>Hot peppers, mushrooms, fried onions, sauce.</p>
+                </li>
+                <li>
+                  <h4>Hot Home-Made Roast Beef</h4>
+                  <p>Cooked in-house, on a Kaiser roll.</p>
+                </li>
+                <li>
+                  <h4>Pizza Steak</h4>
+                  <p>Sauce and mozzarella cheese.</p>
+                </li>
+                <li>
+                  <h4>Popeye</h4>
+                  <p>Chicken, spinach, mushrooms, garlic, provolone.</p>
+                </li>
+                <li>
+                  <h4>Buffalo Chicken Cheesesteak</h4>
+                  <p>Buffalo sauce, bleu cheese.</p>
+                </li>
+                <li>
+                  <h4>Grilled Chicken &amp; Roasted Red Pepper Wrap</h4>
+                  <p>Chicken, peppers, balsamic glaze, spinach, provolone.</p>
+                </li>
+                <li>
+                  <h4>Royal Cheeseburger</h4>
+                  <p>Lettuce, tomato, onion, mayo.</p>
+                </li>
+                <li>
+                  <h4>Bacon Mac &amp; Cheese Burger</h4>
+                  <p>Homemade mac &amp; cheese and bacon.</p>
+                </li>
+                <li>
+                  <h4>Meatball Parm</h4>
+                  <p>Meatballs, sauce, and melted cheese.</p>
+                </li>
+                <li>
+                  <h4>Pulled Pork</h4>
+                  <p>With provolone.</p>
+                </li>
+              </ul>
+            </section>
+
+            <section
+              class="menu-panel panel-fryer"
+              id="panel-fryer"
+              role="tabpanel"
+              aria-labelledby="tab-fryer"
+            >
+              <h3 class="menu-cat">Fryer</h3>
+              <ul class="menu-list" role="list">
+                <li class="menu-item-wide">
+                  <h4>Wings <span class="qty">10 per order</span></h4>
+                  <p>Pick your sauce:</p>
+                  <ul class="chips" role="list">
+                    <li>Hot</li>
+                    <li>Thai Chili</li>
+                    <li>Hot-BBQ</li>
+                    <li>BBQ</li>
+                  </ul>
+                  <p class="note">Extra dressing available.</p>
+                </li>
+                <li>
+                  <h4>Fiery Fingers <span class="qty">10 count</span></h4>
+                  <p>With bleu cheese.</p>
+                </li>
+                <li>
+                  <h4>Chicken Fingers</h4>
+                  <p>Honey mustard or BBQ.</p>
+                </li>
+                <li>
+                  <h4>Mozzarella Sticks</h4>
+                  <p>Fried until golden.</p>
+                </li>
+                <li>
+                  <h4>Onion Rings</h4>
+                  <p>Hot from the fryer.</p>
+                </li>
+                <li>
+                  <h4>Fries</h4>
+                  <p>Add cheese sauce or Old Bay.</p>
+                </li>
+              </ul>
+            </section>
+
+            <section
+              class="menu-panel panel-extras"
+              id="panel-extras"
+              role="tabpanel"
+              aria-labelledby="tab-extras"
+            >
+              <h3 class="menu-cat">Extras</h3>
+              <div class="extras-group">
+                <h4>Add to any sandwich</h4>
+                <ul class="chips" role="list">
+                  <li>Cheese</li>
+                  <li>Mushrooms</li>
+                  <li>Hot peppers</li>
+                  <li>Sweet peppers</li>
+                  <li>Long hots</li>
+                  <li>Roasted red peppers</li>
+                  <li>Sauce</li>
+                </ul>
+              </div>
+              <div class="extras-group">
+                <h4>Sides</h4>
+                <ul class="chips" role="list">
+                  <li>Mac &amp; cheese</li>
+                  <li>Cucumber salad</li>
+                </ul>
+              </div>
+              <aside class="specials-card">
+                <p class="specials-title">Daily specials</p>
+                <p>
+                  Something new on the board most days. Ask your bartender or
+                  call <a href="tel:+12156460408">215-646-0408</a>.
+                </p>
+              </aside>
+            </section>
+          </div>
+
+          <p class="menu-footnote">
+            Menu items and availability may change. Consuming raw or undercooked
+            meats, poultry, seafood, shellfish, or eggs may increase your risk
+            of foodborne illness.
+          </p>
+        </div>
+      </section>
+
+      <!-- ============ EVENTS ============ -->
+      <!-- PLACEHOLDER: confirm nights and times with the owner. -->
+      <section
+        class="events section"
+        id="events"
+        aria-labelledby="events-title"
+      >
+        <div class="container events-grid">
+          <div class="events-intro reveal">
+            <h2 id="events-title" class="section-title">
+              Every night’s got something
+            </h2>
+            <p>
+              Game on every TV, a trivia crowd that takes it seriously, and
+              darts in the back.
+            </p>
+            <a class="btn btn-ghost" href="#visit">Plan your visit</a>
+          </div>
+
+          <ol class="week reveal" role="list">
+            <li class="week-row week-game">
+              <span class="week-day">Game days</span>
+              <div>
+                <h3>Birds, Phils, Flyers, Sixers</h3>
+                <p>
+                  Every Philly game on the TVs.
+                  <span class="ph">[Game-day drink or wing special]</span>
+                </p>
+              </div>
+            </li>
+            <li class="week-row">
+              <span class="week-day">Wednesday</span>
+              <div>
+                <h3>Trivia night</h3>
+                <p>
+                  Bring a team, starts Wednesday at 7 PM.
+                  
+                </p>
+              </div>
+            </li>
+            <li class="week-row">
+              <span class="week-day">Every day</span>
+              <div>
+                <h3>Darts</h3>
+                <p>
+                  Open play at the boards. New shooters welcome, ask at the
+                  bar.
+                </p>
+              </div>
+            </li>
+            <li class="week-row">
+              <span class="week-day">Every day</span>
+              <div>
+                <h3>Daily specials</h3>
+                <p>Whatever the kitchen’s excited about. Ask your bartender.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ REVIEWS ============ -->
+      <!-- REAL REVIEWS GO HERE: paste the exact text, first name + last initial, and the source. -->
+      <section class="reviews section" aria-labelledby="reviews-title">
+        <div class="container">
+          <h2 id="reviews-title" class="section-title reveal">
+            From the regulars
+          </h2>
+          <div class="review-grid">
+            <figure class="review review-lead reveal">
+              <blockquote>
+                <p class="ph">
+                  [Paste the strongest real review here, ideally one that
+                  mentions the roast beef or the cheesesteak. Two or three
+                  sentences reads best.]
+                </p>
+              </blockquote>
+              <figcaption>
+                <span class="ph">[First name L.]</span>
+                <span class="review-src ph">[Google]</span>
+              </figcaption>
+            </figure>
+            <figure class="review reveal">
+              <blockquote>
+                <p class="ph">
+                  [Short review about the atmosphere, bartenders, or game days.]
+                </p>
+              </blockquote>
+              <figcaption>
+                <span class="ph">[First name L.]</span>
+                <span class="review-src ph">[Yelp]</span>
+              </figcaption>
+            </figure>
+            <figure class="review reveal">
+              <blockquote>
+                <p class="ph">
+                  [Short review about the wings or the food overall.]
+                </p>
+              </blockquote>
+              <figcaption>
+                <span class="ph">[First name L.]</span>
+                <span class="review-src ph">[Facebook]</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ VISIT / FOOTER ============ -->
+    <footer class="site-footer" id="visit" aria-labelledby="visit-title">
+      <div class="container footer-grid">
+        <div class="visit-info">
+          <h2 id="visit-title" class="section-title">Come on in</h2>
+
+          <address class="address">
+            <a
+              href="https://maps.google.com/?q=505+Limekiln+Pike,+Maple+Glen,+PA+19002"
+              target="_blank"
+              rel="noopener"
+              >505 Limekiln Pike<br />Maple Glen, PA 19002</a
+            >
+            <a class="phone" href="tel:+12156460408">215-646-0408</a>
+          </address>
+
+          <!-- Hours: single source of truth. The live "Open now" badge reads these rows.
+             Times are 24h; a close earlier than open means it closes after midnight. -->
+          <table class="hours" data-hours>
+            <caption>
+              Hours
+              <span class="ph">[confirm with owner]</span>
+            </caption>
+            <tbody>
+              <tr data-day="1" data-open="10:00" data-close="02:00">
+                <th scope="row">Monday</th>
+                <td>10 AM – 2 AM</td>
+              </tr>
+              <tr data-day="2" data-open="10:00" data-close="02:00">
+                <th scope="row">Tuesday</th>
+                <td>10 AM – 2 AM</td>
+              </tr>
+              <tr data-day="3" data-open="10:00" data-close="02:00">
+                <th scope="row">Wednesday</th>
+                <td>10 AM – 2 AM</td>
+              </tr>
+              <tr data-day="4" data-open="10:00" data-close="02:00">
+                <th scope="row">Thursday</th>
+                <td>10 AM – 2 AM</td>
+              </tr>
+              <tr data-day="5" data-open="10:00" data-close="02:00">
+                <th scope="row">Friday</th>
+                <td>10 AM – 2 AM</td>
+              </tr>
+              <tr data-day="6" data-open="10:00" data-close="02:00">
+                <th scope="row">Saturday</th>
+                <td>10 AM – 2 AM</td>
+              </tr>
+              <tr data-day="0" data-open="11:00" data-close="02:00">
+                <th scope="row">Sunday</th>
+                <td>11 AM – 2 AM</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="kitchen-note">
+            Kitchen closes at <span class="ph">[time]</span>.
+          </p>
+
+          <ul class="social" role="list">
+            <li>
+              <a
+                href="https://www.facebook.com/Maple-Glen-Tavern-103825703032880/"
+                target="_blank"
+                rel="noopener"
+                aria-label="Maple Glen Tavern on Facebook"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"
+                  />
+                </svg>
+                <span>Facebook</span></a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="ph"
+                aria-label="Maple Glen Tavern on Instagram"
+              >
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.3-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"
+                  />
+                </svg>
+                <span>[Instagram URL]</span></a
+              >
+            </li>
           </ul>
         </div>
-      </div>
-    </section>
 
-    <!-- ============ SIGNATURE DISHES ============ -->
-    <section class="signatures section" aria-labelledby="sig-title">
-      <div class="container">
-        <div class="section-head reveal">
-          <h2 id="sig-title" class="section-title">What the regulars order</h2>
-          <p>Three plates that keep people coming back.</p>
-        </div>
-
-        <div class="sig-grid">
-          <article class="sig sig-feature reveal">
-            <figure class="photo-brief">
-              <div class="photo-brief-frame">
-                <p><strong>Photo brief:</strong> Hot roast beef on a Kaiser roll, cut in half and stacked to show the thin-sliced beef, gravy just catching the light. Overhead at 45°, dark wood bar top, a pint out of focus.</p>
+        <div class="map-wrap">
+          <!-- Map loads only when tapped: saves data on phones and keeps Google cookies off until asked. -->
+          <div class="map" data-map>
+            <img
+              src="assets/video/poster.jpg"
+              alt=""
+              loading="lazy"
+              class="map-bg"
+            />
+            <div class="map-cover">
+              <svg class="map-pin" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
+                />
+              </svg>
+              <p>
+                Right on Limekiln Pike in Maple Glen, with a parking lot on
+                site.
+              </p>
+              <div class="map-actions">
+                <button
+                  class="btn btn-primary btn-sm"
+                  type="button"
+                  data-map-load
+                >
+                  Show interactive map
+                </button>
+                <a
+                  class="btn btn-ghost btn-sm"
+                  href="https://maps.google.com/?q=505+Limekiln+Pike,+Maple+Glen,+PA+19002"
+                  target="_blank"
+                  rel="noopener"
+                  >Get directions</a
+                >
               </div>
-              <figcaption><code>assets/img/roast-beef.jpg</code> (1600×1200)</figcaption>
-            </figure>
-            <div class="sig-body">
-              <h3>Hot Home-Made Roast Beef</h3>
-              <p>Roast beef cooked in-house, sliced thin, and piled hot on a Kaiser roll. Add long hots and cheese for the full Philly treatment.</p>
-            </div>
-          </article>
-
-          <article class="sig reveal">
-            <figure class="photo-brief">
-              <div class="photo-brief-frame">
-                <p><strong>Photo brief:</strong> The Tavern Special in its paper-lined basket. Fried onions, mushrooms, and hot peppers spilling from the roll. Tight side angle.</p>
-              </div>
-              <figcaption><code>assets/img/tavern-special.jpg</code> (1200×900)</figcaption>
-            </figure>
-            <div class="sig-body">
-              <h3>Tavern Special</h3>
-              <p>Our namesake steak with hot peppers, mushrooms, fried onions, and sauce.</p>
-            </div>
-          </article>
-
-          <article class="sig reveal">
-            <figure class="photo-brief">
-              <div class="photo-brief-frame">
-                <p><strong>Photo brief:</strong> Bacon Mac &amp; Cheese Burger, straight-on at plate level, mac &amp; cheese oozing over the patty, crisp bacon visible.</p>
-              </div>
-              <figcaption><code>assets/img/mac-burger.jpg</code> (1200×900)</figcaption>
-            </figure>
-            <div class="sig-body">
-              <h3>Bacon Mac &amp; Cheese Burger</h3>
-              <p>A burger topped with our homemade mac &amp; cheese and bacon. Bring an appetite.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ MENU ============ -->
-    <section class="menu section" id="menu" aria-labelledby="menu-title">
-      <div class="container">
-        <div class="menu-head reveal">
-          <h2 id="menu-title" class="section-title">The menu</h2>
-          <p>Ask your bartender about today’s specials.</p>
-        </div>
-
-        <!-- Tabs show on phones; tablet/desktop shows every section at once. -->
-        <div class="menu-tabs" role="tablist" aria-label="Menu sections" data-menu-tabs hidden>
-          <button role="tab" id="tab-sandwiches" aria-controls="panel-sandwiches" aria-selected="true">Sandwiches</button>
-          <button role="tab" id="tab-fryer" aria-controls="panel-fryer" aria-selected="false" tabindex="-1">Fryer</button>
-          <button role="tab" id="tab-extras" aria-controls="panel-extras" aria-selected="false" tabindex="-1">Extras</button>
-        </div>
-
-        <div class="menu-board" data-menu data-active="sandwiches">
-          <section class="menu-panel panel-sandwiches" id="panel-sandwiches" role="tabpanel" aria-labelledby="tab-sandwiches">
-            <h3 class="menu-cat">Sandwiches</h3>
-            <ul class="menu-list" role="list">
-              <li><h4>Cheesesteak</h4><p>Beef or chicken.</p></li>
-              <li><h4>Tavern Special</h4><p>Hot peppers, mushrooms, fried onions, sauce.</p></li>
-              <li><h4>Hot Home-Made Roast Beef</h4><p>Cooked in-house, on a Kaiser roll.</p></li>
-              <li><h4>Pizza Steak</h4><p>Sauce and mozzarella cheese.</p></li>
-              <li><h4>Popeye</h4><p>Chicken, spinach, mushrooms, garlic, provolone.</p></li>
-              <li><h4>Buffalo Chicken Cheesesteak</h4><p>Buffalo sauce, bleu cheese.</p></li>
-              <li><h4>Grilled Chicken &amp; Roasted Red Pepper Wrap</h4><p>Chicken, peppers, balsamic glaze, spinach, provolone.</p></li>
-              <li><h4>Royal Cheeseburger</h4><p>Lettuce, tomato, onion, mayo.</p></li>
-              <li><h4>Bacon Mac &amp; Cheese Burger</h4><p>Homemade mac &amp; cheese and bacon.</p></li>
-              <li><h4>Meatball Parm</h4><p>Meatballs, sauce, and melted cheese.</p></li>
-              <li><h4>Pulled Pork</h4><p>With provolone.</p></li>
-            </ul>
-          </section>
-
-          <section class="menu-panel panel-fryer" id="panel-fryer" role="tabpanel" aria-labelledby="tab-fryer">
-            <h3 class="menu-cat">Fryer</h3>
-            <ul class="menu-list" role="list">
-              <li class="menu-item-wide">
-                <h4>Wings <span class="qty">10 per order</span></h4>
-                <p>Pick your sauce:</p>
-                <ul class="chips" role="list">
-                  <li>Hot</li><li>Thai Chili</li><li>Hot-BBQ</li><li>BBQ</li>
-                </ul>
-                <p class="note">Extra dressing available.</p>
-              </li>
-              <li><h4>Fiery Fingers <span class="qty">10 count</span></h4><p>With bleu cheese.</p></li>
-              <li><h4>Chicken Fingers</h4><p>Honey mustard or BBQ.</p></li>
-              <li><h4>Mozzarella Sticks</h4><p>Fried until golden.</p></li>
-              <li><h4>Onion Rings</h4><p>Hot from the fryer.</p></li>
-              <li><h4>Fries</h4><p>Add cheese sauce or Old Bay.</p></li>
-            </ul>
-          </section>
-
-          <section class="menu-panel panel-extras" id="panel-extras" role="tabpanel" aria-labelledby="tab-extras">
-            <h3 class="menu-cat">Extras</h3>
-            <div class="extras-group">
-              <h4>Add to any sandwich</h4>
-              <ul class="chips" role="list">
-                <li>Cheese</li><li>Mushrooms</li><li>Hot peppers</li><li>Sweet peppers</li><li>Long hots</li><li>Roasted red peppers</li><li>Sauce</li>
-              </ul>
-            </div>
-            <div class="extras-group">
-              <h4>Sides</h4>
-              <ul class="chips" role="list">
-                <li>Mac &amp; cheese</li><li>Cucumber salad</li>
-              </ul>
-            </div>
-            <aside class="specials-card">
-              <p class="specials-title">Daily specials</p>
-              <p>Something new on the board most days. Ask your bartender or call <a href="tel:+12156460408">215-646-0408</a>.</p>
-            </aside>
-          </section>
-        </div>
-
-        <p class="menu-footnote">Menu items and availability may change. Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness.</p>
-      </div>
-    </section>
-
-    <!-- ============ EVENTS ============ -->
-    <!-- PLACEHOLDER: confirm nights and times with the owner. -->
-    <section class="events section" id="events" aria-labelledby="events-title">
-      <div class="container events-grid">
-        <div class="events-intro reveal">
-          <h2 id="events-title" class="section-title">Every night’s got something</h2>
-          <p>Game on every TV, a trivia crowd that takes it seriously, and darts in the back.</p>
-          <a class="btn btn-ghost" href="#visit">Plan your visit</a>
-        </div>
-
-        <ol class="week reveal" role="list">
-          <li class="week-row week-game">
-            <span class="week-day">Game days</span>
-            <div>
-              <h3>Birds, Phils, Flyers, Sixers</h3>
-              <p>Every Philly game on the TVs. <span class="ph">[Game-day drink or wing special]</span></p>
-            </div>
-          </li>
-          <li class="week-row">
-            <span class="week-day"><span class="ph">[Night]</span></span>
-            <div>
-              <h3>Trivia night</h3>
-              <p>Bring a team, starts <span class="ph">[time]</span>. <span class="ph">[Prize details]</span></p>
-            </div>
-          </li>
-          <li class="week-row">
-            <span class="week-day"><span class="ph">[Night]</span></span>
-            <div>
-              <h3>Dart league</h3>
-              <p>League play at the boards. New shooters welcome, ask at the bar.</p>
-            </div>
-          </li>
-          <li class="week-row">
-            <span class="week-day">Every day</span>
-            <div>
-              <h3>Daily specials</h3>
-              <p>Whatever the kitchen’s excited about. Ask your bartender.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ============ REVIEWS ============ -->
-    <!-- REAL REVIEWS GO HERE: paste the exact text, first name + last initial, and the source. -->
-    <section class="reviews section" aria-labelledby="reviews-title">
-      <div class="container">
-        <h2 id="reviews-title" class="section-title reveal">From the regulars</h2>
-        <div class="review-grid">
-          <figure class="review review-lead reveal">
-            <blockquote><p class="ph">[Paste the strongest real review here, ideally one that mentions the roast beef or the cheesesteak. Two or three sentences reads best.]</p></blockquote>
-            <figcaption><span class="ph">[First name L.]</span> <span class="review-src ph">[Google]</span></figcaption>
-          </figure>
-          <figure class="review reveal">
-            <blockquote><p class="ph">[Short review about the atmosphere, bartenders, or game days.]</p></blockquote>
-            <figcaption><span class="ph">[First name L.]</span> <span class="review-src ph">[Yelp]</span></figcaption>
-          </figure>
-          <figure class="review reveal">
-            <blockquote><p class="ph">[Short review about the wings or the food overall.]</p></blockquote>
-            <figcaption><span class="ph">[First name L.]</span> <span class="review-src ph">[Facebook]</span></figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ============ VISIT / FOOTER ============ -->
-  <footer class="site-footer" id="visit" aria-labelledby="visit-title">
-    <div class="container footer-grid">
-      <div class="visit-info">
-        <h2 id="visit-title" class="section-title">Come on in</h2>
-
-        <address class="address">
-          <a href="https://maps.google.com/?q=505+Limekiln+Pike,+Maple+Glen,+PA+19002" target="_blank" rel="noopener">505 Limekiln Pike<br>Maple Glen, PA 19002</a>
-          <a class="phone" href="tel:+12156460408">215-646-0408</a>
-        </address>
-
-        <!-- Hours: single source of truth. The live "Open now" badge reads these rows.
-             Times are 24h; a close earlier than open means it closes after midnight. -->
-        <table class="hours" data-hours>
-          <caption>Hours <span class="ph">[confirm with owner]</span></caption>
-          <tbody>
-            <tr data-day="1" data-open="10:00" data-close="02:00"><th scope="row">Monday</th><td>10 AM – 2 AM</td></tr>
-            <tr data-day="2" data-open="10:00" data-close="02:00"><th scope="row">Tuesday</th><td>10 AM – 2 AM</td></tr>
-            <tr data-day="3" data-open="10:00" data-close="02:00"><th scope="row">Wednesday</th><td>10 AM – 2 AM</td></tr>
-            <tr data-day="4" data-open="10:00" data-close="02:00"><th scope="row">Thursday</th><td>10 AM – 2 AM</td></tr>
-            <tr data-day="5" data-open="10:00" data-close="02:00"><th scope="row">Friday</th><td>10 AM – 2 AM</td></tr>
-            <tr data-day="6" data-open="10:00" data-close="02:00"><th scope="row">Saturday</th><td>10 AM – 2 AM</td></tr>
-            <tr data-day="0" data-open="11:00" data-close="02:00"><th scope="row">Sunday</th><td>11 AM – 2 AM</td></tr>
-          </tbody>
-        </table>
-        <p class="kitchen-note">Kitchen closes at <span class="ph">[time]</span>.</p>
-
-        <ul class="social" role="list">
-          <li><a href="https://www.facebook.com/Maple-Glen-Tavern-103825703032880/" target="_blank" rel="noopener" aria-label="Maple Glen Tavern on Facebook">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-2.8 0-4.5 1.8-4.5 4.6V11H7v4h2.5v9h4v-9h3l.5-4h-3.5V8.8c0-.5.3-.8.5-.8z"/></svg>
-            <span>Facebook</span></a></li>
-          <li><a href="#" class="ph" aria-label="Maple Glen Tavern on Instagram">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.3-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4z"/></svg>
-            <span>[Instagram URL]</span></a></li>
-        </ul>
-      </div>
-
-      <div class="map-wrap">
-        <!-- Map loads only when tapped: saves data on phones and keeps Google cookies off until asked. -->
-        <div class="map" data-map>
-          <img src="assets/video/poster.jpg" alt="" loading="lazy" class="map-bg">
-          <div class="map-cover">
-            <svg class="map-pin" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-            <p>Right on Limekiln Pike in Maple Glen, with a parking lot on site.</p>
-            <div class="map-actions">
-              <button class="btn btn-primary btn-sm" type="button" data-map-load>Show interactive map</button>
-              <a class="btn btn-ghost btn-sm" href="https://maps.google.com/?q=505+Limekiln+Pike,+Maple+Glen,+PA+19002" target="_blank" rel="noopener">Get directions</a>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="container footer-base">
-      <span class="footer-brand"><svg class="brand-mark" aria-hidden="true"><use href="#mgt-logo"/></svg> Maple Glen Tavern</span>
-      <span>© <span data-year>2026</span> Maple Glen Tavern. Please drink responsibly.</span>
-    </div>
-  </footer>
+      <div class="container footer-base">
+        <span class="footer-brand"
+          ><svg class="brand-mark" aria-hidden="true">
+            <use href="#mgt-logo" />
+          </svg>
+          Maple Glen Tavern</span
+        >
+        <span
+          >© <span data-year>2026</span> Maple Glen Tavern. Please drink
+          responsibly.</span
+        >
+      </div>
+    </footer>
 
-  <!-- Phone-only quick actions -->
-  <nav class="quick-bar" aria-label="Quick actions">
-    <a href="tel:+12156460408">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
-      Call</a>
-    <a href="#menu">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v2H4zm0 6h16v2H4zm0 6h10v2H4z"/></svg>
-      Menu</a>
-    <a href="#visit" data-quick-hours>
-      <span class="status-dot" aria-hidden="true"></span>
-      Hours</a>
-    <a href="https://maps.google.com/?q=505+Limekiln+Pike,+Maple+Glen,+PA+19002" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
-      Directions</a>
-  </nav>
+    <!-- Phone-only quick actions -->
+    <nav class="quick-bar" aria-label="Quick actions">
+      <a href="tel:+12156460408">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"
+          />
+        </svg>
+        Call</a
+      >
+      <a href="#menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 5h16v2H4zm0 6h16v2H4zm0 6h10v2H4z" />
+        </svg>
+        Menu</a
+      >
+      <a href="#visit" data-quick-hours>
+        <span class="status-dot" aria-hidden="true"></span>
+        Hours</a
+      >
+      <a
+        href="https://maps.google.com/?q=505+Limekiln+Pike,+Maple+Glen,+PA+19002"
+        target="_blank"
+        rel="noopener"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"
+          />
+        </svg>
+        Directions</a
+      >
+    </nav>
 
-  <button class="to-top" type="button" data-to-top hidden>
-    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l7 7-1.4 1.4L13 8.8V19h-2V8.8l-4.6 4.6L5 12z"/></svg>
-    <span class="visually-hidden">Back to top</span>
-  </button>
+    <button class="to-top" type="button" data-to-top hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 5l7 7-1.4 1.4L13 8.8V19h-2V8.8l-4.6 4.6L5 12z" />
+      </svg>
+      <span class="visually-hidden">Back to top</span>
+    </button>
 
-  <script src="js/main.js" defer></script>
-</body>
+    <script src="js/main.js" defer></script>
+  </body>
 </html>
