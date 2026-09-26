@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-78 -76 150 160" role="img" aria-label="Maple Glen Tavern shamrock logo">
+  <defs>
+    <path id="lobe" d="M0 0C-6-8-31-21-31-40C-31-54-19-61-10-61C-4-61 0-56 0-51C0-56 4-61 10-61C19-61 31-54 31-40C31-21 6-8 0 0Z"/>
+    <mask id="hollow" maskUnits="userSpaceOnUse" x="-78" y="-76" width="150" height="160">
+      <rect x="-78" y="-76" width="150" height="160" fill="#fff"/>
+      <use href="#lobe" fill="#000" transform="translate(0 4)"/>
+      <use href="#lobe" fill="#000" transform="rotate(-118) translate(0 4)"/>
+      <use href="#lobe" fill="#000" transform="rotate(118) translate(0 4)"/>
+    </mask>
+  </defs>
+  <g fill="none" stroke="#1d1a17" stroke-width="9" stroke-linejoin="round" stroke-linecap="round" mask="url(#hollow)">
+    <use href="#lobe" transform="translate(0 4)"/>
+    <use href="#lobe" transform="rotate(-118) translate(0 4)"/>
+    <use href="#lobe" transform="rotate(118) translate(0 4)"/>
+    <path d="M-5 8C-15 32-34 53-60 66" stroke-width="7"/>
+  </g>
+  <g fill="#1d1a17" font-family="Georgia, 'Times New Roman', serif" font-weight="700" font-size="30" text-anchor="middle">
+    <text x="0" y="-24">G</text>
+    <text x="-31" y="20">M</text>
+    <text x="31" y="24">T</text>
+  </g>
+</svg>
