@@ -6,7 +6,9 @@
 
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const reduceMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
 
   /* ---------- Header: solid after leaving the hero ---------- */
   const header = $("[data-header]");
@@ -16,8 +18,16 @@
   const onScroll = () => {
     const past = window.scrollY > 24;
     header.classList.toggle("is-solid", past || navOpen);
-    if (toTop) toTop.classList.toggle("is-visible", window.scrollY > window.innerHeight * 1.5);
-    if (quickBar && hero) quickBar.classList.toggle("is-visible", window.scrollY > hero.offsetHeight * 0.6);
+    if (toTop)
+      toTop.classList.toggle(
+        "is-visible",
+        window.scrollY > window.innerHeight * 1.5,
+      );
+    if (quickBar && hero)
+      quickBar.classList.toggle(
+        "is-visible",
+        window.scrollY > hero.offsetHeight * 0.6,
+      );
   };
 
   /* ---------- Mobile nav ---------- */
@@ -27,13 +37,22 @@
   const setNav = (open) => {
     navOpen = open;
     toggle.setAttribute("aria-expanded", String(open));
-    toggle.querySelector(".visually-hidden").textContent = open ? "Close menu" : "Open menu";
+    toggle.querySelector(".visually-hidden").textContent = open
+      ? "Close menu"
+      : "Open menu";
     links.classList.toggle("is-open", open);
     onScroll();
   };
   toggle.addEventListener("click", () => setNav(!navOpen));
-  links.addEventListener("click", (e) => { if (e.target.closest("a")) setNav(false); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && navOpen) { setNav(false); toggle.focus(); } });
+  links.addEventListener("click", (e) => {
+    if (e.target.closest("a")) setNav(false);
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && navOpen) {
+      setNav(false);
+      toggle.focus();
+    }
+  });
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
 
@@ -50,7 +69,10 @@
 
   /* ---------- Live hours (always Eastern time, whatever the visitor's timezone) ---------- */
   const rows = $$("[data-hours] tr[data-day]");
-  const toMin = (t) => { const [h, m] = t.split(":").map(Number); return h * 60 + m; };
+  const toMin = (t) => {
+    const [h, m] = t.split(":").map(Number);
+    return h * 60 + m;
+  };
   const fmt = (t) => {
     let [h, m] = t.split(":").map(Number);
     const ap = h >= 12 ? "PM" : "AM";
@@ -58,15 +80,30 @@
     return m ? `${h}:${String(m).padStart(2, "0")} ${ap}` : `${h} ${ap}`;
   };
   const hours = {};
-  rows.forEach((r) => { hours[r.dataset.day] = { open: r.dataset.open, close: r.dataset.close, row: r }; });
+  rows.forEach((r) => {
+    hours[r.dataset.day] = {
+      open: r.dataset.open,
+      close: r.dataset.close,
+      row: r,
+    };
+  });
 
   function easternNow() {
     const parts = new Intl.DateTimeFormat("en-US", {
-      timeZone: "America/New_York", weekday: "short", hour: "2-digit", minute: "2-digit", hour12: false
+      timeZone: "America/New_York",
+      weekday: "short",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
     }).formatToParts(new Date());
     const get = (t) => parts.find((p) => p.type === t).value;
-    const day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(get("weekday"));
-    return { day, min: (Number(get("hour")) % 24) * 60 + Number(get("minute")) };
+    const day = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"].indexOf(
+      get("weekday"),
+    );
+    return {
+      day,
+      min: (Number(get("hour")) % 24) * 60 + Number(get("minute")),
+    };
   }
 
   function status() {
@@ -75,29 +112,44 @@
     const yesterday = hours[(day + 6) % 7];
     // Still inside last night's hours (after midnight)?
     if (yesterday) {
-      const o = toMin(yesterday.open), c = toMin(yesterday.close);
+      const o = toMin(yesterday.open),
+        c = toMin(yesterday.close);
       if (c <= o && min < c) return { open: true, until: yesterday.close, day };
     }
     if (today) {
-      const o = toMin(today.open), c = toMin(today.close);
+      const o = toMin(today.open),
+        c = toMin(today.close);
       const end = c <= o ? c + 1440 : c;
       if (min >= o && min < end) return { open: true, until: today.close, day };
-      if (min < o) return { open: false, next: `today at ${fmt(today.open)}`, day };
+      if (min < o)
+        return { open: false, next: `today at ${fmt(today.open)}`, day };
     }
     const tomorrow = hours[(day + 1) % 7];
-    return { open: false, next: tomorrow ? `tomorrow at ${fmt(tomorrow.open)}` : "soon", day };
+    return {
+      open: false,
+      next: tomorrow ? `tomorrow at ${fmt(tomorrow.open)}` : "soon",
+      day,
+    };
   }
 
   function renderStatus() {
     if (!rows.length) return;
     const s = status();
-    rows.forEach((r) => r.classList.toggle("is-today", Number(r.dataset.day) === s.day));
+    rows.forEach((r) =>
+      r.classList.toggle("is-today", Number(r.dataset.day) === s.day),
+    );
     const badge = $("[data-status]");
     const quick = $("[data-quick-hours]");
-    [badge, quick].forEach((el) => el && (el.dataset.state = s.open ? "open" : "closed"));
+    [badge, quick].forEach(
+      (el) => el && (el.dataset.state = s.open ? "open" : "closed"),
+    );
     if (badge) {
-      $("[data-status-label]", badge).textContent = s.open ? "Open now" : "Closed now";
-      $("[data-status-detail]", badge).textContent = s.open ? `Until ${fmt(s.until)} tonight` : `Opens ${s.next}`;
+      $("[data-status-label]", badge).textContent = s.open
+        ? "Open now"
+        : "Closed now";
+      $("[data-status-detail]", badge).textContent = s.open
+        ? `Until ${fmt(s.until)} tonight`
+        : `Opens ${s.next}`;
     }
   }
   renderStatus();
@@ -122,14 +174,20 @@
       const offset = tablist.getBoundingClientRect().bottom + 8;
       const boardTop = board.getBoundingClientRect().top;
       if (boardTop < offset) {
-        window.scrollTo({ top: window.scrollY + boardTop - offset, behavior: reduceMotion ? "auto" : "smooth" });
+        window.scrollTo({
+          top: window.scrollY + boardTop - offset,
+          behavior: reduceMotion ? "auto" : "smooth",
+        });
       }
     };
     tabs.forEach((t, i) => {
       t.addEventListener("click", () => select(t));
       t.addEventListener("keydown", (e) => {
         const d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
-        if (d) { e.preventDefault(); select(tabs[(i + d + tabs.length) % tabs.length], true); }
+        if (d) {
+          e.preventDefault();
+          select(tabs[(i + d + tabs.length) % tabs.length], true);
+        }
       });
     });
   }
@@ -143,7 +201,8 @@
       iframe.title = "Map to Maple Glen Tavern, 505 Limekiln Pike";
       iframe.loading = "lazy";
       iframe.referrerPolicy = "no-referrer-when-downgrade";
-      iframe.src = "https://www.google.com/maps?q=Maple+Glen+Tavern,+505+Limekiln+Pike,+Maple+Glen,+PA+19002&z=16&output=embed";
+      iframe.src =
+        "https://www.google.com/maps?q=Maple+Glen+Tavern,+505+Limekiln+Pike,+Maple+Glen,+PA+19002&z=16&output=embed";
       map.innerHTML = "";
       map.appendChild(iframe);
       iframe.focus();
@@ -164,11 +223,14 @@
     let tripsDone = 0;
     let settled = false;
     const mid = () => (video.duration || 6.83) / 2;
-    const hasFrameCb = "requestVideoFrameCallback" in HTMLVideoElement.prototype;
+    const hasFrameCb =
+      "requestVideoFrameCallback" in HTMLVideoElement.prototype;
 
     const setButton = (paused) => {
       vBtn.setAttribute("aria-pressed", String(paused));
-      vBtn.querySelector(".visually-hidden").textContent = paused ? "Replay background video" : "Pause background video";
+      vBtn.querySelector(".visually-hidden").textContent = paused
+        ? "Replay background video"
+        : "Pause background video";
     };
 
     const settle = () => {
@@ -190,7 +252,8 @@
         if (!settled) watch();
       });
     };
-    if (!hasFrameCb) video.addEventListener("timeupdate", () => check(video.currentTime));
+    if (!hasFrameCb)
+      video.addEventListener("timeupdate", () => check(video.currentTime));
 
     video.addEventListener("ended", () => {
       tripsDone++;
@@ -213,7 +276,9 @@
       video.removeAttribute("autoplay");
       video.pause();
       const showStill = () => settle();
-      video.readyState >= 1 ? showStill() : video.addEventListener("loadedmetadata", showStill, { once: true });
+      video.readyState >= 1
+        ? showStill()
+        : video.addEventListener("loadedmetadata", showStill, { once: true });
     } else {
       watch();
     }
@@ -221,8 +286,13 @@
     // Button: pause mid-flight, or replay from the start once it has settled
     vBtn.addEventListener("click", () => {
       if (settled) return start();
-      if (video.paused) { setButton(false); video.play().catch(() => {}); }
-      else { video.pause(); setButton(true); }
+      if (video.paused) {
+        setButton(false);
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+        setButton(true);
+      }
     });
 
     // Pause when off screen to save battery (never restarts a settled video)
@@ -237,11 +307,17 @@
   /* ---------- Subtle scroll reveal ---------- */
   const revealEls = $$(".reveal");
   if (!reduceMotion && "IntersectionObserver" in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
-      });
-    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.1 });
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-in");
+            io.unobserve(e.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.1 },
+    );
     revealEls.forEach((el) => io.observe(el));
   } else {
     revealEls.forEach((el) => el.classList.add("is-in"));
